@@ -1,11 +1,14 @@
-print("Welcome to the UW Calculator Playground")
+print("Welcome to the UW Calculator Playground testing")
+
 
 func calculate(_ args: [String]) -> Int {
-    return -1
+    return 1
+
 }
 
 func calculate(_ arg: String) -> Int {
-    return -1
+    return 1
+    
 }
 
 // -------------------------------------------
