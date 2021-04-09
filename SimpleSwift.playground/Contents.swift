@@ -43,8 +43,8 @@ func calculate(_ args: [String]) -> Int {
 }
 
 func calculate(_ arg: String) -> Int {
-    let splitStr = (arg.split(separator: " ")).map({(substring) in return String(substring)})
-        return calculate(splitStr)
+    let newArg = (arg.split(separator: " ")).map(String.init)
+        return calculate(newArg)
 }
 
 // -------------------------------------------
