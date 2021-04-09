@@ -1,14 +1,50 @@
 print("Welcome to the UW Calculator Playground testing")
 
-
 func calculate(_ args: [String]) -> Int {
-    return 1
-
+    if args.count == 1 {
+        return 0
+    } else {
+        switch args[1] {
+                case "+":
+                    return Int(args[0])! + Int(args[2])!
+                case "-":
+                    return Int(args[0])! - Int(args[2])!
+                case "/":
+                    return Int(args[0])! / Int(args[2])!
+                case "*":
+                    return Int(args[0])! * Int(args[2])!
+                case "%":
+                    return Int(args[0])! % Int(args[2])!
+        default:
+            switch args.last {
+                case "count":
+                    return args.count - 1
+                case "avg":
+                    var sum = 0
+                    for a in args {
+                        if (Int(a) != nil) {
+                            sum += Int(a)!
+                        }
+                    }
+                    return sum / (args.count - 1)
+                case "fact":
+                    var multiNum = 1
+                    if(Int(args[0])! > 0) {
+                        for n in 1...Int(args[0])! {
+                            multiNum *= n
+                        }
+                    }
+                    return multiNum
+            default:
+                return 0
+            }
+        }
+    }
 }
 
 func calculate(_ arg: String) -> Int {
-    return 1
-    
+    let splitStr = (arg.split(separator: " ")).map({(substring) in return String(substring)})
+        return calculate(splitStr)
 }
 
 // -------------------------------------------
