@@ -43,7 +43,7 @@ func calculate(_ args: [String]) -> Int {
 }
 
 func calculate(_ arg: String) -> Int {
-    let newArg = (arg.split(separator: " ")).map(String.init)
+    let newArg = arg.split(separator: " ").map(String.init)
         return calculate(newArg)
 }
 
